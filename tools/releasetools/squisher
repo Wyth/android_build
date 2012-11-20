@@ -84,12 +84,9 @@ rm -rf $REPACK/ota/recovery
 [ -d $REPACK/ota/system/lib/modules ] && \
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
-# Remove wl1271-nvs.bin so that wl1271-nvs_127x.bin can re-write it
-rm $REPACK/ota/system/etc/firmware/ti-connectivity/wl1271-nvs.bin
-
 # Determine what to name the new signed package
 REALDATE=`date -u +%Y%m%d`
-MODVERSION=jb-$REALDATE-otter
+MODVERSION=$TARGET_PRODUCT-jb-$REALDATE
 OUTFILE=$OUT/$TARGET_PRODUCT-jb-$REALDATE.zip
 echo MODVERSION: $MODVERSION
 
