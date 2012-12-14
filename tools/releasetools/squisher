@@ -87,7 +87,7 @@ rm -rf $REPACK/ota/recovery
 # Determine what to name the new signed package
 REALDATE=`date -u +%Y%m%d`
 MODVERSION=$TARGET_PRODUCT-jb-$REALDATE
-OUTFILE=$OUT/$TARGET_PRODUCT-jb-$REALDATE.zip
+OUTFILE=$OUT/$TARGET_PRODUCT-killrom-$REALDATE.zip
 echo MODVERSION: $MODVERSION
 
 # Pack it up and sign
