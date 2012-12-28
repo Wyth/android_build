@@ -47,6 +47,16 @@ printf "Unpacking $OTAPACKAGE..."
 unzip $QUIET $OTAPACKAGE
 echo
 
+if [ "$TARGET_PRODUCT" = "full_stingray" ]; then
+cp -f $ANDROID_BUILD_TOP/vendor/google/killrom/system/app/Maps.apk $REPACK/ota/system/app/Maps.apk
+cp -f $ANDROID_BUILD_TOP/vendor/google/killrom/system/app/Music2.apk $REPACK/ota/system/app/Music2.apk
+fi
+
+if [ "$TARGET_PRODUCT" = "full_wingray" ]; then
+cp -f $ANDROID_BUILD_TOP/vendor/google/killrom/system/app/Maps.apk $REPACK/ota/system/app/Maps.apk
+cp -f $ANDROID_BUILD_TOP/vendor/google/killrom/system/app/Music2.apk $REPACK/ota/system/app/Music2.apk
+fi
+
 # Move all apks to the same directory so xargs can
 # use also with framework-res.apk. This allow process
 # framework-res.apk in parallel with other apks
